@@ -1,0 +1,135 @@
+#!/bin/bash
+export CUDA_VISIBLE_DEVICES=0
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data ETTh1 \
+    --root_path ./dataset/ETT-small \
+    --data_path ETTh1.csv \
+    --features M \
+    --number_variable 7 \
+    --seq_len 96 \
+    --pred_len 96 \
+    --d_model 32 \
+    --dropout 0.4 \
+    --weight_decay 0.0002 \
+    --d_factor 5\
+    --p_factor 3 \
+    --enc_in 7 \
+    --dec_in 7 \
+    --c_out 7 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 256 \
+    --learning_rate 0.001 \
+    --train_epochs 15 \
+    --patience 5 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv bior3.1 \
+    --m 5 \
+    --patch_configs "16,8;16,8;12,6;12,6;12,6;8,4"
+
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data ETTh1 \
+    --root_path ./dataset/ETT-small \
+    --data_path ETTh1.csv \
+    --features M \
+    --number_variable 7 \
+    --seq_len 96 \
+    --pred_len 192 \
+    --d_model 32 \
+    --dropout 0.4 \
+    --weight_decay 0.0003 \
+    --d_factor 6 \
+    --p_factor 4 \
+    --enc_in 7 \
+    --dec_in 7 \
+    --c_out 7 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 256 \
+    --learning_rate 0.001 \
+    --train_epochs 100 \
+    --patience 10 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv bior3.1 \
+    --m 5 \
+    --patch_configs "16,8;16,8;12,6;12,6;12,6;8,4"
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data ETTh1 \
+    --root_path ./dataset/ETT-small \
+    --data_path ETTh1.csv \
+    --features M \
+    --number_variable 7 \
+    --seq_len 96 \
+    --pred_len 336 \
+    --d_model 32 \
+    --dropout 0.45 \
+    --weight_decay 0.0002 \
+    --d_factor 6 \
+    --p_factor 4 \
+    --enc_in 7 \
+    --dec_in 7 \
+    --c_out 7 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 256 \
+    --learning_rate 0.001\
+    --train_epochs 10 \
+    --patience 5 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv bior3.1 \
+    --m 5 \
+    --patch_configs "16,8;16,8;12,6;12,6;12,6;8,4"
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data ETTh1 \
+    --root_path ./dataset/ETT-small \
+    --data_path ETTh1.csv \
+    --features M \
+    --number_variable 7 \
+    --seq_len 96 \
+    --pred_len 720 \
+    --d_model 32 \
+    --dropout 0.3 \
+    --weight_decay 0.0001 \
+    --d_factor 6 \
+    --p_factor 4 \
+    --enc_in 7 \
+    --dec_in 7 \
+    --c_out 7 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 256 \
+    --learning_rate 0.001 \
+    --train_epochs 100 \
+    --patience 5 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv bior3.1 \
+    --m 5 \
+    --patch_configs "16,8;16,8;12,6;12,6;12,6;8,4"

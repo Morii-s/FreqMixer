@@ -1,0 +1,135 @@
+#!/bin/bash
+export CUDA_VISIBLE_DEVICES=0
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data weather \
+    --root_path ./dataset/weather \
+    --data_path weather.csv \
+    --features M \
+    --seq_len 96 \
+    --pred_len 96 \
+    --number_variable 21 \
+    --d_model 32 \
+    --dropout 0.1\
+    --weight_decay 0.0000 \
+    --d_factor 5\
+    --p_factor 4 \
+    --enc_in 21 \
+    --dec_in 21 \
+    --c_out 21 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 256 \
+    --learning_rate 0.002 \
+    --train_epochs 10 \
+    --patience 5 \
+    --percent 10 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv bior3.1 \
+    --m 2 \
+    --patch_configs "16,8;12,6;8,4"
+
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data weather \
+    --root_path ./dataset/weather \
+    --data_path weather.csv \
+    --features M \
+    --seq_len 96 \
+    --pred_len 192 \
+    --d_model 32 \
+    --dropout 0.2\
+    --weight_decay 0.0000 \
+    --d_factor 5\
+    --p_factor 2 \
+    --number_variable 21 \
+    --enc_in 21 \
+    --dec_in 21 \
+    --c_out 21 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 256 \
+    --learning_rate 0.002\
+    --train_epochs 10 \
+    --patience 5 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv db1 \
+    --m 2 \
+    --patch_configs "16,8;12,6;8,4"
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data weather \
+    --root_path ./dataset/weather \
+    --data_path weather.csv \
+    --features M \
+    --seq_len 96 \
+    --pred_len 336 \
+    --d_model 32 \
+    --dropout 0.2\
+    --weight_decay 0.0000 \
+    --d_factor 4\
+    --p_factor 2 \
+    --number_variable 21 \
+    --enc_in 21 \
+    --dec_in 21 \
+    --c_out 21 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 256 \
+    --learning_rate 0.004\
+    --train_epochs 10 \
+    --patience 3 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv db1 \
+    --m 2 \
+    --patch_configs "16,8;12,6;8,4"
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data weather \
+    --root_path ./dataset/weather \
+    --data_path weather.csv \
+    --features M \
+    --seq_len 96 \
+    --pred_len 720 \
+    --d_model 32 \
+    --dropout 0.3\
+    --weight_decay 0.0000 \
+    --d_factor 5\
+    --p_factor 3 \
+    --number_variable 21 \
+    --enc_in 21 \
+    --dec_in 21 \
+    --c_out 21 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 256 \
+    --learning_rate 0.005 \
+    --train_epochs 10 \
+    --patience 5 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv db1 \
+    --m 2 \
+    --patch_configs "16,8;12,6;8,4"
