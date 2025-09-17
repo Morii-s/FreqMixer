@@ -1,0 +1,135 @@
+#!/bin/bash
+export CUDA_VISIBLE_DEVICES=0
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data ECL \
+    --root_path ./dataset/electricity \
+    --data_path electricity.csv \
+    --features M \
+    --seq_len 96 \
+    --pred_len 96 \
+    --d_model 32 \
+    --dropout 0.2\
+    --weight_decay 0.000 \
+    --d_factor 6 \
+    --p_factor 4 \
+    --number_variable 321 \
+    --enc_in 321 \
+    --dec_in 321 \
+    --c_out 321 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 32 \
+    --learning_rate 0.01 \
+    --train_epochs 20 \
+    --patience 5 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv db1 \
+    --m 3 \
+    --patch_configs "16,8;12,6;12,6;8,4"
+
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data ECL \
+    --root_path ./dataset/electricity \
+    --data_path electricity.csv \
+    --features M \
+    --seq_len 96 \
+    --pred_len 192 \
+    --d_model 32 \
+    --dropout 0.1 \
+    --weight_decay 0.000 \
+    --d_factor 6 \
+    --p_factor 4 \
+    --number_variable 321 \
+    --enc_in 321 \
+    --dec_in 321 \
+    --c_out 321 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 32 \
+    --learning_rate 0.01 \
+    --train_epochs 20 \
+    --patience 5 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv db1 \
+    --m 3 \
+    --patch_configs "16,8;12,6;12,6;8,4"
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data ECL \
+    --root_path ./dataset/electricity \
+    --data_path electricity.csv \
+    --features M \
+    --seq_len 96 \
+    --pred_len 336 \
+    --d_model 32 \
+    --dropout 0.1 \
+    --weight_decay 0.000 \
+    --d_factor 6 \
+    --p_factor 4 \
+    --number_variable 321 \
+    --enc_in 321 \
+    --dec_in 321 \
+    --c_out 321 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 32 \
+    --learning_rate 0.01\
+    --train_epochs 20 \
+    --patience 5 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv db1 \
+    --m 3 \
+    --patch_configs "16,8;12,6;12,6;8,4"
+
+python -u run.py \
+    --task_name long_term_forecast \
+    --is_training 1 \
+    --model FreqMixer \
+    --model_id FreqMixer\
+    --data ECL \
+    --root_path ./dataset/electricity \
+    --data_path electricity.csv \
+    --features M \
+    --seq_len 96 \
+    --pred_len 720 \
+    --d_model 32 \
+    --dropout 0.1 \
+    --weight_decay 0.000 \
+    --d_factor 6 \
+    --p_factor 4 \
+    --number_variable 321 \
+    --enc_in 321 \
+    --dec_in 321 \
+    --c_out 321 \
+    --des Exp \
+    --itr 1 \
+    --batch_size 32 \
+    --learning_rate 0.005 \
+    --train_epochs 20 \
+    --patience 5 \
+    --percent 100 \
+    --patch_size 16 \
+    --stride 8 \
+    --wv db1 \
+    --m 3 \
+    --patch_configs "16,8;12,6;12,6;8,4"
